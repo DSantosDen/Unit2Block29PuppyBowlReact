@@ -1,0 +1,75 @@
+.detail-page {
+  width: 98%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.detail-page img {
+  width: 80%;
+  height: 350px;
+  margin: auto;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.detail-page p {
+  padding-left: 10%;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* NewPlayerForm.css */
+.form-container {
+  background-color: aquamarine;
+}
+
+.input-field {
+  margin-left: 15px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  height: 15px;
+  padding: 8px;
+}
+
+.submit-button {
+  background-color: #01254b;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 15px;
+  padding: 12px 20px;
+}
+
+.search-wrapper {
+  margin: 20px auto;
+  width: max-content;
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper input {
+  height: 32px;
+  width: 300px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+}
+
+.search-wrapper button {
+  height: 34px;
+  padding: 0 20px;
+  background: rgb(19, 233, 19);
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

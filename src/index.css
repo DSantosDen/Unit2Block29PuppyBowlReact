@@ -1,0 +1,80 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  align-items: center;
+  background: black;
+  color: #fff;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav a {
+  color: #fff;
+  font-weight: bolder;
+  height: max-content;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+.siteTitle {
+  font-size: 25pt;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-section button {
+  padding: 8px 15px;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+}
+
+.detail-btn {
+  background: rgb(5, 5, 162);
+  text-decoration: none;
+  color: #fff;
+  display: grid ;
+  place-content: center;
+  padding: 8px 17px;
+}
+
+.delete-btn {
+  background: rgb(243, 28, 28);
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
