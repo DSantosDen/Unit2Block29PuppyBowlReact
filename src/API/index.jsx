@@ -55,7 +55,11 @@ const createPlayer = async (playerData) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(playerData),
+      body: JSON.stringify({
+        name: playerData.name,
+        breed: playerData.breed,
+        imageUrl: playerData.imageUrl,
+      }),
     });
     const data = await response.json();
     console.log("Response status:", response.status);

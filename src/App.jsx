@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 
 // Importing the NavBar component for navigation.
 import NavBar from "./component/NavBar";
+
 import NewPlayerForm from "./pages/CreatePlayer";
 
 // The main function component of the application.
@@ -22,14 +23,12 @@ function App() {
     <BrowserRouter>
       {/* Rendering the NavBar component at the top of every page. */}
       <NavBar />
-
       {/* Defining routes for the application using the Routes component. */}
       {/* Each Route component specifies a path and the component to render when that path is matched. */}
       <Routes>
         {/* Route for the home page ("/"). Renders the Home component. */}
         <Route path="/" element={<Home />} />
         <Route path="/create-player" element={<NewPlayerForm />} />
-
         {/* Dynamic route for detail pages ("/:id"). Renders the Detail component. */}
         {/* The ":id" in the path is a URL parameter that will match any value and pass it to the Detail component. */}
         <Route path="/:id" element={<Detail />} />

@@ -1,28 +1,37 @@
 import { useState } from "react";
+import { createPlayer } from "../API/index";
 
 function NewPlayerForm() {
   const [name, setName] = useState("");
-  const [owner, setOwner] = useState("");
-  const [team, setTeam] = useState("");
+  const [breed, setBreed] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
-  console.log("Current state:", { name, owner, team });
+  console.log("Current state:", { name, breed, imageUrl });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Submitting form with:", { name, owner, team });
-    const response = await fetch(
-      "https://fsa-puppy-bowl.herokuapp.com/api/2402-FTB-ET-WEB-PT/players",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, owner, team }),
-      }
-    );
-    const data = await response.json();
-    console.log("Received response:", data);
+    console.log("Submitting form with:", { name, breed, imageUrl });
+    try {
+      const newPlayer = await createPlayer({ name, breed, imageUrl });
+      console.log("New player created:", newPlayer);
+    } catch (error) {
+      console.error("Error", error);
+    }
   };
+
+  /*   const response = await fetch(
+    "https://fsa-puppy-bowl.herokuapp.com/api/2402-FTB-ET-WEB-PT/players",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, breed, imageUrl }),
+    }
+  ); 
+  const data = await response.json();
+  console.log("Received response:", data);
+};*/
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
@@ -36,21 +45,21 @@ function NewPlayerForm() {
       />
       <input
         type="text"
-        value={owner}
-        onChange={(e) => setOwner(e.target.value)}
-        placeholder="Owner"
+        value={breed}
+        onChange={(e) => setBreed(e.target.value)}
+        placeholder="Breed"
         required
         className="input-field"
       />
       <input
         type="text"
-        value={team}
-        onChange={(e) => setTeam(e.target.value)}
-        placeholder="Team"
+        value={imageUrl}
+        onChange={(e) => setImageUrl(e.target.value)}
+        placeholder="Image URL"
         required
         className="input-field"
       />
-      <button type="submit" className="submit-button">
+      <button onClick={createPlayer} type="submit" className="submit-button">
         Create Player
       </button>
     </form>

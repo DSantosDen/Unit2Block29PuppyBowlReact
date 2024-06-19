@@ -11,7 +11,6 @@ function NavBar() {
       <Link to="/" className="siteTitle">
         Puppy Bowl
       </Link>
-
       {/* An unordered list (<ul>) containing list items (<li>) for each navigation option. */}
       <ul>
         {/* List item for creating a player. Contains a Link component that navigates to "/create-player". */}
