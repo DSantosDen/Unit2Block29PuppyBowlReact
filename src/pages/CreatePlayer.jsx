@@ -13,9 +13,14 @@ function NewPlayerForm() {
     console.log("Submitting form with:", { name, breed, imageUrl });
     try {
       const newPlayer = await createPlayer({ name, breed, imageUrl });
+      alert("Player created sucessfully !");
       console.log("New player created:", newPlayer);
+      setName("");
+      setBreed("");
+      setImageUrl("");
     } catch (error) {
       console.error("Error", error);
+      alert("Something went wrong");
     }
   };
 
@@ -59,7 +64,7 @@ function NewPlayerForm() {
         required
         className="input-field"
       />
-      <button onClick={createPlayer} type="submit" className="submit-button">
+      <button type="submit" className="submit-button">
         Create Player
       </button>
     </form>
